@@ -55,8 +55,8 @@
   object-fit: contain;
 }
 
-body {
-  overflow-x: hidden;
+.wrapper {
+  overflow: hidden;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////// */
@@ -67,11 +67,13 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
+  gap: 1rem;
 }
 
 .menu {
   display: flex;
   list-style-type: none;
+  gap: 0.5rem 1rem;
 }
 
 .menu li {
@@ -81,9 +83,9 @@ header {
   cursor: pointer;
 }
 
-.menu li + li {
+/* .menu li + li {
   margin-left: 1rem;
-}
+} */
 
 main {
   display: flex;
@@ -346,6 +348,7 @@ footer {
   background-color: var(--color-Primary-Desaturated-Blue);
   padding: 4rem;
   display: flex;
+  gap: 1rem;
 }
 
 .left-container {
@@ -491,4 +494,108 @@ footer .logo {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* Media Queries ////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////// */
+
+@media (max-width: 1075px) {
+  .form-container {
+    padding-right: 0;
+  }
+  .email {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .section-1 {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .form {
+    width: 100%;
+  }
+  .email {
+    flex: 1;
+  }
+
+  .section-2 {
+    margin-top: 15rem;
+    padding-top: 0;
+    flex-direction: column-reverse;
+  }
+
+  .section-2::before {
+    left: -75%;
+    width: 250%;
+  }
+
+  .section-2 .header {
+    text-align: center;
+  }
+
+  .productive-container {
+    align-items: center;
+  }
+
+  .section-2-left {
+    align-items: center;
+  }
+
+  .early-access {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .form-container {
+    width: 80%;
+  }
+  .form-container input {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .bottom-footer {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .footer {
+    padding: 4rem;
+    gap: 2.5rem;
+  }
+
+  .social-media {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    flex-direction: column;
+  }
+  .form input {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .section-1-left,
+  .section-2-left,
+  .early-access,
+  .footer {
+    padding: 2rem;
+  }
+  .menu {
+    flex-wrap: wrap;
+  }
+
+  .section-2 .header,
+  .section-2 .paragraph {
+    max-width: 90%;
+  }
 }
